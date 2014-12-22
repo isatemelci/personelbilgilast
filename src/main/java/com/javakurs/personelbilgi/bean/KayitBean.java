@@ -70,8 +70,8 @@ public class KayitBean {
         telefonList.add(cepTel);
         
         kisi.setTelefonList(telefonList);
-       // cepTel.setKisi(kisi);
-       // evTel.setKisi(kisi);
+        cepTel.setKisi(kisi);
+        evTel.setKisi(kisi);
         
         kisiService.ekle(kisi);   
         
