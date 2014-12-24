@@ -8,24 +8,26 @@
         <title>Personel Bilgi Projesi</title>
     </h:head>
     <h:body>
-        <h:form>
-            <p:panelGrid columns="2" style="margin-top:60px">
-                <f:facet name="header">
-                    <p:outputLabel value="Kişi Ekleme"/>
-                </f:facet>
-                <p:outputLabel value="Ad:"/>
-                <p:inputText value="#{kayitBean.kisi.ad}"/>
-                <p:outputLabel value="Soyad:"/>
-                <p:inputText value="#{kayitBean.kisi.soyad}"/>
-                <p:outputLabel value="Cep Tel:"/>
-                <p:inputText value="#{kayitBean.cepTel.telNo}"/>
-                <p:outputLabel value="Ev Tel:"/>
-                <p:inputText value="#{kayitBean.evTel.telNo}"/>
-                <f:facet name="footer">
-                    <p:commandButton value="Ekle" action="#{kayitBean.ekle()}" update="@form"/>
-                </f:facet>
-            </p:panelGrid>
-        </h:form>
+        <center>
+            <h:form>
+                <p:panelGrid columns="2" style="margin-top:60px">
+                    <f:facet name="header">
+                        <p:outputLabel value="Kişi Ekleme"/>
+                    </f:facet>
+                    <p:outputLabel value="Ad:"/>
+                    <p:inputText value="#{kayitBean.kisi.ad}"/>
+                    <p:outputLabel value="Soyad:"/>
+                    <p:inputText value="#{kayitBean.kisi.soyad}"/>
+                    <p:outputLabel value="Cep Tel:"/>
+                    <p:inputText value="#{kayitBean.cepTel.telNo}"/>
+                    <p:outputLabel value="Ev Tel:"/>
+                    <p:inputText value="#{kayitBean.evTel.telNo}"/>
+                    <f:facet name="footer">
+                        <p:commandButton value="Ekle" action="#{kayitBean.ekle()}" update="@form"/>
+                    </f:facet>
+                </p:panelGrid>
+            </h:form>
+        </center>
     </h:body>
 </html>
 

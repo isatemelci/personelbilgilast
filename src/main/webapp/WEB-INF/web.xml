@@ -28,7 +28,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>kayit.jsf</welcome-file>
+        <welcome-file>giris.jsf</welcome-file>
     </welcome-file-list>
     
 </web-app>

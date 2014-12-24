@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Giriş Sayfası</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h:form>
+                <p:panelGrid columns="2" style="margin-top: 60px">
+                    
+                    <f:facet name="header">
+                        <p:outputLabel value="Giriş Ekranı" />
+                    </f:facet> 
+                    
+                    <p:outputLabel for="username" value="Username:" />
+                    <p:inputText id="username" value="#{girisBean.kullaniciAdi}" required="true" label="username" />
+
+                    <p:outputLabel for="password" value="Password:" />
+                    <p:password id="password" value="#{girisBean.sifre}" required="true" label="password" />
+
+                    <f:facet name="footer">
+                        <p:commandButton value="Giriş Yap" action="#{girisBean.doLogin}"/>
+                    </f:facet>  
+                </p:panelGrid>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+
