@@ -30,17 +30,19 @@ public class KullanicilarFacade extends AbstractFacade<Kullanicilar> {
         super(Kullanicilar.class);
     }
 
-    public boolean girisKontrol(String pKullaniciAdi, String pSifre) {
+    public boolean girisKontrol(String pKullaniciAdi, String pSifre) throws Exception {
 
-        Kullanicilar k = em.createNamedQuery("Kullanicilar.girisKontrol", Kullanicilar.class)
-                .setParameter("kullanici_adi", pKullaniciAdi)
-                .setParameter("sifre", pSifre).getSingleResult();
-
-        if (k != null) {
-            return true;
-        } else {
-            return false;
+        try {
+            Kullanicilar k = em.createNamedQuery("Kullanicilar.girisKontrol", Kullanicilar.class)
+                    .setParameter("kullanici_adi", pKullaniciAdi)
+                    .setParameter("sifre", pSifre).getSingleResult();
+            if (k != null) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            throw new Exception();
         }
-       
     }
 }

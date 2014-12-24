@@ -2,6 +2,8 @@ package com.javakurs.personelbilgi.bean;
 
 import com.javakurs.personelbilgi.service.KullaniciGirisServis;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -24,16 +26,20 @@ public class GirisBean implements Serializable {
 
     }
 
-    public String doLogin() {
+    public String doLogin() throws Exception {
 
-        boolean sonuc = kullaniciGirisServis.girisKontrol(kullaniciAdi, sifre);
-
-        if (sonuc) {
-            return "kayit.jsf";
-        } else {
-            return "giris.jsf";
+        try {
+            boolean sonuc = kullaniciGirisServis.girisKontrol(kullaniciAdi, sifre);
+            
+            if (sonuc) {
+                return "kayit.jsf";
+            } else {
+                sifirla();
+                return "giris.jsf";
+            }
+        } catch (Exception ex) {
+            throw new Exception();
         }
-
     }
 
     public String getKullaniciAdi() {
@@ -50,5 +56,10 @@ public class GirisBean implements Serializable {
 
     public void setSifre(String sifre) {
         this.sifre = sifre;
+    }
+
+    private void sifirla() {
+        this.kullaniciAdi = "";
+        this.sifre = "";
     }
 }

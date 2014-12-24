@@ -19,7 +19,7 @@ public class KullaniciGirisServis {
     @EJB
     private KullanicilarFacade kullanicilarFacade;
 
-    public boolean girisKontrol(String pKullaniciAdi, String pSifre) {
+    public boolean girisKontrol(String pKullaniciAdi, String pSifre) throws Exception {
         return kullanicilarFacade.girisKontrol(pKullaniciAdi, pSifre);
     }
 }
